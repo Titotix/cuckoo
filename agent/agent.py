@@ -70,6 +70,17 @@ class Agent(object):
         @return: error message.
         """
         return str(self.error_message)
+    
+    def get_os_info(self):
+        """Returns a dict with guest OS informations.
+        @return: dict 
+        """
+        platform = {}
+        platform["system"] = platform.system()
+        platform["version"] = platform.version()
+        platform["release"] = platform.release()
+        platform["arch"] = platform.machine()
+        return platform
 
     def add_malware(self, data, name):
         """Get analysis data.
